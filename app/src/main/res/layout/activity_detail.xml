@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollViewInfo"
+    tools:context=".DetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageViewBigPoster"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/content_description_big_poster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/imageViewFavouriteOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="OnClickChangeFavourite"
+            android:contentDescription="@string/add_to_favourites"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewBigPoster"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewBigPoster"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewBigPoster"
+            app:srcCompat="@drawable/ic_favourite_on_60" />
+
+        <include
+            android:id="@+id/moveInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewFavouriteOn"
+            layout="@layout/movie_info"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
